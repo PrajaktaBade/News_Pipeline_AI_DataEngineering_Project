@@ -26,18 +26,18 @@ news_pipeline/
 
 ## ⚡ Quick Start (5 steps)
 
-### Step 1 — Get a free NewsAPI key (2 minutes)
+### Step 1 — Get a free NewsAPI key 
 
 1. Go to **https://newsapi.org/register**
-2. Sign up with your email (free, no credit card)
-3. Copy your API key from the dashboard
+2. Sign up with your email (free)
+3. Copy API key from the dashboard
 
 ### Step 2 — Set up your environment
 
 Open a terminal in the `news_pipeline/` folder, then:
 
 ```bash
-# Create a virtual environment (keeps your packages isolated)
+# Create a virtual environment (keeps packages isolated)
 python -m venv venv
 
 # Activate it
@@ -49,11 +49,11 @@ venv\Scripts\activate          # Windows (Command Prompt)
 pip install -r requirements.txt
 ```
 
-> 💡 You'll know the virtual environment is active when you see `(venv)` at the start of your terminal prompt.
+> 💡 Virtual environment is active when you see `(venv)` at the start of your terminal prompt.
 
-### Step 3 — Add your API key
+### Step 3 — Add API key
 
-Open `.env` in any text editor and add you API keys:
+Open `.env` in any text editor and add API keys:
 
 ```
 NEWS_API_KEY=abc123yourkeyhere
@@ -101,7 +101,7 @@ You should see output like:
 =======================================================
 ```
 
-> ⚠️ **First run only**: The AI model (~500MB) will be downloaded automatically. This takes 1-3 minutes depending on your internet speed. Subsequent runs use the cached model and are instant.
+> ⚠️ **First run only**: The AI model (~500MB) will be downloaded automatically. This takes 1-3 minutes depending on internet speed. Subsequent runs use the cached model and are instant.
 
 ### Step 5 — Open the dashboard
 
@@ -109,17 +109,17 @@ You should see output like:
 streamlit run dashboard.py
 ```
 
-Your browser will automatically open **http://localhost:8501** with the live dashboard!
+Browser will automatically open **http://localhost:8501** with the live dashboard!
 
 ---
 
 ## 🎛️ Configuration Options
 
-Edit your `.env` file to customize behavior:
+Edit `.env` file to customize behavior:
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `NEWS_API_KEY` | Your NewsAPI key (required) | `abc123...` |
+| `NEWS_API_KEY` | NewsAPI key (required) | `abc123...` |
 | `NEWS_TOPIC` | Topic to search for | `bitcoin`, `climate change`, `football` |
 | `HEADLINES_COUNT` | How many articles to fetch (1–100) | `30` |
 | `AI_MODE` | `local` (free) or `openai` (better accuracy) | `local` |
@@ -130,7 +130,7 @@ Edit your `.env` file to customize behavior:
 ## 🤖 AI Modes Explained
 
 ### Local Mode (Default — Free)
-Uses a **DistilBERT** model from HuggingFace that runs entirely on your computer.
+Uses a **DistilBERT** model from HuggingFace that runs entirely on computer.
 - ✅ Free forever
 - ✅ No API key needed
 - ✅ Works offline after first download
@@ -208,14 +208,14 @@ engine = sa.create_engine("postgresql://user:password@localhost/newsdb")
 ```
 
 ### 4. Add email alerts
-Send yourself an email when sentiment goes very negative:
+Send an email when sentiment goes very negative:
 ```python
 import smtplib
 if neg_pct > 0.7:
     # send alert email
 ```
 
-### 5. Deploy your dashboard
+### 5. Deploy dashboard
 - **Streamlit Community Cloud** (free): https://share.streamlit.io
 - **Render** (free tier): https://render.com
 - **Railway**: https://railway.app
@@ -225,10 +225,10 @@ if neg_pct > 0.7:
 ## 🐛 Troubleshooting
 
 - **`NEWS_API_KEY is not set`**
-→ Make sure you renamed added your real keyin `.env` file.
+→ Make sure real key in `.env` file.
 
 - **`No module named 'streamlit'`**
-→ Run `pip install -r requirements.txt` and make sure your venv is activated.
+→ Run `pip install -r requirements.txt` and make sure venv is activated.
 
 - **`0 articles fetched`**
 → Try a more common topic like `technology` or `sports`. Some niche topics have few results.
