@@ -9,7 +9,7 @@ Build a real data pipeline that fetches news, runs AI sentiment analysis, stores
 
 ```
 news_pipeline/
-├── .env              ← API  keys (never commit this to Git!)
+├── .env              ← API  keys (not included in this repo!)
 ├── requirements.txt  ← Python packages needed
 │
 ├── extract.py        ← STEP 1: Fetch headlines from NewsAPI
