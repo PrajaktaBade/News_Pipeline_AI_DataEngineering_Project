@@ -224,19 +224,19 @@ if neg_pct > 0.7:
 
 ## 🐛 Troubleshooting
 
-**`NEWS_API_KEY is not set`**
+- **`NEWS_API_KEY is not set`**
 → Make sure you renamed added your real keyin `.env` file.
 
-**`No module named 'streamlit'`**
+- **`No module named 'streamlit'`**
 → Run `pip install -r requirements.txt` and make sure your venv is activated.
 
-**`0 articles fetched`**
+- **`0 articles fetched`**
 → Try a more common topic like `technology` or `sports`. Some niche topics have few results.
 
-**Pipeline runs but model download is slow**
+- **Pipeline runs but model download is slow**
 → The first run downloads a 500MB AI model. This is normal. Future runs are instant.
 
-**Dashboard shows "No data yet"**
+- **Dashboard shows "No data yet"**
 → Run `python main.py` first to populate the database.
 
 ---
